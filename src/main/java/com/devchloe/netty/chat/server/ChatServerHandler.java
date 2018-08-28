@@ -5,8 +5,6 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.ChannelMatcher;
-import io.netty.channel.group.DefaultChannelGroup;
-import io.netty.util.concurrent.ImmediateEventExecutor;
 
 public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
 
@@ -15,7 +13,6 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
     public ChatServerHandler(ChannelGroup channelGroup) {
         this.channels = channelGroup;
     }
-//    private static final ChannelGroup channels = new DefaultChannelGroup(ImmediateEventExecutor.INSTANCE);
 
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
